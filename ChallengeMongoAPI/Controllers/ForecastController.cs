@@ -1,5 +1,6 @@
 ﻿using ChallengeMongoAPI.Models;
 using ChallengeMongoAPI.Services.Abstractions;
+using ChallengeMongoAPI.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChallengeMongoAPI.Controllers
@@ -19,8 +20,16 @@ namespace ChallengeMongoAPI.Controllers
 
         // GET: api/forecast
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Forecast))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<Forecast> Get([FromQuery] float lat, [FromQuery] float lon)
         {
+            if (!Validators.LatLogValidator(lat, lon))
+            {
+                return BadRequest("Invalid latitud or longitude.");
+            }
+
             var localForecast = _localService.Get(lat, lon);
             if (localForecast == null)
             {
@@ -40,8 +49,15 @@ namespace ChallengeMongoAPI.Controllers
 
         // GET api/forecast/city
         [HttpGet("{city}")]
-        public ActionResult<Forecast> Get(string city)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Forecast))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<Forecast> GetByCity(string city)
         {
+            if (string.IsNullOrEmpty(city)) {
+                return BadRequest("Invalid city name.");
+            }
+
             var localForecast = _localService.GetByCity(city);
             if (localForecast == null)
             {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeMongoAPI", "ChallengeMongoAPI\ChallengeMongoAPI.csproj", "{73E59DFE-AAC5-4562-926B-825DD1E4A586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChallengeMongoAPI", "ChallengeMongoAPI\ChallengeMongoAPI.csproj", "{73E59DFE-AAC5-4562-926B-825DD1E4A586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeMongoAPI.Test", "ChallengeMongoAPI.Test\ChallengeMongoAPI.Test.csproj", "{BF24671C-B05A-4683-8CF8-09B67C11FC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{73E59DFE-AAC5-4562-926B-825DD1E4A586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E59DFE-AAC5-4562-926B-825DD1E4A586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E59DFE-AAC5-4562-926B-825DD1E4A586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF24671C-B05A-4683-8CF8-09B67C11FC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF24671C-B05A-4683-8CF8-09B67C11FC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF24671C-B05A-4683-8CF8-09B67C11FC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF24671C-B05A-4683-8CF8-09B67C11FC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
